@@ -1,16 +1,48 @@
-# React + Vite
+# Dashboard do Gestor — Logística Gamificada
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 📌 Contexto do Projeto
+Este projeto é um protótipo de dashboard de gestão logística gamificada, focado no acompanhamento de desempenho de motoristas. Ele apresenta um ranking baseado em pontos, indicadores de eficiência e conquistas desbloqueadas.
 
-Currently, two official plugins are available:
+O painel foi desenvolvido como inspirado no processo seletivo para a vaga de Desenvolvedor(a) Frontend do edital IMD/MAGISDEV.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 Demonstração
+- **Live Demo (Frontend):** [Substitua pelo link da Vercel/Netlify]
+- **API Mockada:** [Substitua pelo link do Render/MockAPI]
 
-## React Compiler
+*(Adicione aqui um GIF ou print do dashboard finalizado)*
+![Screenshot do Dashboard](./caminho-para-imagem.png)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🛠️ Tecnologias Utilizadas
+- **React (JavaScript)**: Biblioteca principal para construção da interface estruturada em componentes.
+- **Vite**: Ferramenta de build e servidor de desenvolvimento otimizado.
+- **Recharts**: Biblioteca declarativa para visualização de dados e gráficos.
+- **json-server**: Simulação de API REST (banco de dados em `db.json`) para consumir dados no frontend com fetch real.
+- **CSS Puro**: Estilização nativa e responsiva.
 
-## Expanding the ESLint configuration
+## ⚙️ Como rodar localmente
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 1. Pré-requisitos
+Certifique-se de ter o [Node.js](https://nodejs.org/) instalado na máquina.
+
+### 2. Instalação
+Clone o repositório e instale as dependências:
+```bash
+git clone https://github.com/seu-usuario/dashboard-gestor.git
+cd dashboard-gestor
+npm install
+```
+
+### 3. Execução
+O projeto exige que o frontend e a API rodem simultaneamente em dois terminais distintos.
+
+**Terminal 1 (Inicia a API Mockada):**
+```bash
+npm run mock-api
+```
+*(A API ficará disponível em http://localhost:3001)*
+
+**Terminal 2 (Inicia o Frontend):**
+```bash
+npm run dev
+```
+*(O frontend ficará disponível em http://localhost:5173)*
