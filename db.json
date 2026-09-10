@@ -1,0 +1,27 @@
+{
+  "motoristas": [
+    {
+      "id": 1,
+      "nome": "Carlos Souza",
+      "avatar": "https://i.pravatar.cc/100?img=1",
+      "pontos": 1240,
+      "entregasConcluidas": 87,
+      "eficiencia": 92
+    }
+  ],
+  "conquistas": [
+    {
+      "id": 1,
+      "motoristaId": 1,
+      "titulo": "Entregador do Mês",
+      "icone": "🏆",
+      "desbloqueadaEm": "2026-08-01"
+    }
+  ],
+  "indicadoresMensais": [
+    { "mes": "Mai", "entregas": 300, "eficienciaMedia": 85 },
+    { "mes": "Jun", "entregas": 340, "eficienciaMedia": 87 },
+    { "mes": "Jul", "entregas": 365, "eficienciaMedia": 89 },
+    { "mes": "Ago", "entregas": 390, "eficienciaMedia": 91 }
+  ]
+}
