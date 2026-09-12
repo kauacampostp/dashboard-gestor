@@ -10,34 +10,53 @@ import {
 } from 'recharts';
 
 export default function IndicatorChart({ dados }) {
-  // Prevenção caso a API retorne um array vazio ou indefinido
   if (!dados || dados.length === 0) {
-    return <p>Nenhum dado disponível para o gráfico.</p>;
+    return (
+      <p className="text-slate-500 text-center py-4">
+        Nenhum dado disponível para o gráfico.
+      </p>
+    );
   }
 
   return (
-    // A div externa precisa ter uma altura definida para o ResponsiveContainer funcionar
-    <div style={{ width: '100%', height: 350, marginTop: '2rem' }}>
-      <h3>Evolução Mensal</h3>
+    <div className="w-full h-[350px]">
+      <h3 className="text-xl font-semibold mb-6 text-slate-800">
+        Evolução Mensal
+      </h3>
       
       <ResponsiveContainer width="100%" height="100%">
-        <BarChart data={dados} margin={{ top: 20, right: 30, left: 0, bottom: 0 }}>
-          {/* Linhas de grade pontilhadas no fundo */}
-          <CartesianGrid strokeDasharray="3 3" />
+        <BarChart data={dados} margin={{ top: 0, right: 0, left: -20, bottom: 0 }}>
+          {/* Grade apenas horizontal para visual mais limpo */}
+          <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#e2e8f0" />
           
-          {/* Eixo X recebe o nome do mês */}
-          <XAxis dataKey="mes" />
+          <XAxis 
+            dataKey="mes" 
+            axisLine={false} 
+            tickLine={false} 
+            tick={{ fill: '#64748b' }} 
+            dy={10} 
+          />
           
-          {/* Eixo Y é gerado automaticamente baseado nos valores numéricos */}
-          <YAxis />
+          <YAxis 
+            axisLine={false} 
+            tickLine={false} 
+            tick={{ fill: '#64748b' }} 
+          />
           
-          {/* Tooltip mostra os valores exatos ao passar o mouse */}
-          <Tooltip />
-          <Legend />
+          <Tooltip 
+            cursor={{ fill: '#f8fafc' }}
+            contentStyle={{ 
+              borderRadius: '8px', 
+              border: 'none', 
+              boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)' 
+            }}
+          />
           
-          {/* dataKey deve bater exatamente com as chaves do seu db.json */}
-          <Bar dataKey="entregas" fill="#3b82f6" name="Total de Entregas" />
-          <Bar dataKey="eficienciaMedia" fill="#10b981" name="Eficiência Média (%)" />
+          <Legend wrapperStyle={{ paddingTop: '20px' }} />
+          
+          {/* radius arredonda apenas as bordas superiores das barras */}
+          <Bar dataKey="entregas" fill="#3b82f6" name="Total de Entregas" radius={[4, 4, 0, 0]} />
+          <Bar dataKey="eficienciaMedia" fill="#10b981" name="Eficiência Média (%)" radius={[4, 4, 0, 0]} />
         </BarChart>
       </ResponsiveContainer>
     </div>
