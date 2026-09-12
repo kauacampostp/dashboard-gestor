@@ -11,7 +11,7 @@ O painel foi desenvolvido como inspirado no processo seletivo para a vaga de Des
 
 > ⚠️ A API roda no plano gratuito do Render, que "dorme" após um tempo sem uso. A primeira requisição depois de um período de inatividade pode levar de 30 a 50 segundos para responder.
 
-![Screenshot do Dashboard](./caminho-para-imagem.png)
+![Screenshot do Dashboard](./screenshot.png)
 
 ## 🛠️ Tecnologias Utilizadas
 - **React (JavaScript)**: Biblioteca principal para construção da interface estruturada em componentes.
