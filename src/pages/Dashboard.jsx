@@ -5,7 +5,7 @@ import Loader from "../components/Loader";
 import ErrorMessage from "../components/ErrorMessage";
 import IndicatorCard from "../components/IndicatorCard";
 import AchievementBadge from "../components/AchivementBadge";
-import IndicatorChart from "../IndicatorChart";
+import IndicatorChart from "../components/IndicatorChart"; // <-- BUG: faltava "components/" no caminho
 
 export function Dashboard() {
   const { data: motoristas, loading: loadMot, error: errMot } = useFetch(getMotoristas);
@@ -19,7 +19,7 @@ export function Dashboard() {
   if (hasError) return <ErrorMessage mensagem={hasError} />;
 
   // Captura o último dado de indicador para os cards superiores
-  const mesAtual = indicadores[indicadores.length - 1] || { entregas: 0, eficienciaMedia: 0 }; //dando problema
+  const mesAtual = indicadores[indicadores.length - 1] || { entregas: 0, eficienciaMedia: 0 };
 
   return (
     // Contêiner principal da página: fundo claro, altura mínima da tela, padding.

@@ -34,7 +34,7 @@ export function progressoNivel(pontos) {
   return Math.floor(porcetagem);
 }
 
-export function ordenarRanking(motoristas){
+export function ordenarRanking(motoristas) {
   let listaMot = [...motoristas];
 
   listaMot.sort((a, b) => b.pontos - a.pontos);
@@ -45,4 +45,6 @@ export function ordenarRanking(motoristas){
       posicao: index + 1 // Cria a nova propriedade baseada no índice
     };
   });
+
+  return motoristasComPosicao; // <-- ESTE ERA O BUG: faltava o return
 }
