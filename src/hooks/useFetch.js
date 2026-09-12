@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 export function useFetch(fetchFunction) {
   // Hook criado manualmente
   const [data, setData] = useState(null);
-  const [loading, setLoading] = useState(true); // <-- BUG: estava iniciando como null
+  const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {

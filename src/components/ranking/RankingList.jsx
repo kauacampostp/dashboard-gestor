@@ -1,5 +1,5 @@
-import { RankingItem } from './RankingItem';
-import { ordenarRanking } from '../../utils/gamification';
+import { RankingItem } from "./RankingItem";
+import { ordenarRanking } from "../../utils/gamification";
 
 export function RankingList({ motoristas }) {
   if (!motoristas || motoristas.length === 0) {
@@ -19,10 +19,10 @@ export function RankingList({ motoristas }) {
       </h2>
       <ul className="flex flex-col gap-3">
         {motoristasRanqueados.map((motorista) => (
-          <RankingItem 
-            key={motorista.id} 
-            motorista={motorista} 
-            posicao={motorista.posicao} 
+          <RankingItem
+            key={motorista.id}
+            motorista={motorista}
+            posicao={motorista.posicao}
           />
         ))}
       </ul>

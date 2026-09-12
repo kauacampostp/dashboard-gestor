@@ -1,12 +1,15 @@
-import { calcularNivel, progressoNivel } from '../../utils/gamification';
+import { calcularNivel, progressoNivel } from "../../utils/gamification";
 
 export function RankingItem({ motorista, posicao }) {
-  // Lógica condicional do Tailwind para destacar o pódio (Top 3)
-  let corPosicao = "bg-slate-100 text-slate-500 border-slate-200"; 
-  
-  if (posicao === 1) corPosicao = "bg-yellow-100 text-yellow-700 border-yellow-300 ring-2 ring-yellow-100";
-  if (posicao === 2) corPosicao = "bg-slate-200 text-slate-700 border-slate-400";
-  if (posicao === 3) corPosicao = "bg-orange-100 text-orange-700 border-orange-300";
+  let corPosicao = "bg-slate-100 text-slate-500 border-slate-200";
+
+  if (posicao === 1)
+    corPosicao =
+      "bg-yellow-100 text-yellow-700 border-yellow-300 ring-2 ring-yellow-100";
+  if (posicao === 2)
+    corPosicao = "bg-slate-200 text-slate-700 border-slate-400";
+  if (posicao === 3)
+    corPosicao = "bg-orange-100 text-orange-700 border-orange-300";
 
   // Nível e progresso calculados dinamicamente a partir dos pontos
   const nivel = calcularNivel(motorista.pontos);
@@ -14,13 +17,14 @@ export function RankingItem({ motorista, posicao }) {
 
   return (
     <li className="flex items-center justify-between p-3 md:p-4 rounded-xl border border-slate-100 bg-white hover:bg-slate-50 transition-colors shadow-sm">
-      
       <div className="flex items-center gap-4 flex-1 min-w-0">
         {/* Ícone numérico da posição */}
-        <span className={`flex items-center justify-center w-10 h-10 rounded-full text-sm font-bold border shrink-0 ${corPosicao}`}>
+        <span
+          className={`flex items-center justify-center w-10 h-10 rounded-full text-sm font-bold border shrink-0 ${corPosicao}`}
+        >
           {posicao}º
         </span>
-        
+
         {/* Dados do motorista */}
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-2 flex-wrap">
@@ -51,7 +55,6 @@ export function RankingItem({ motorista, posicao }) {
           Pontos
         </span>
       </div>
-      
     </li>
   );
 }

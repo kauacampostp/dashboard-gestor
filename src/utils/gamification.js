@@ -41,10 +41,10 @@ export function ordenarRanking(motoristas) {
 
   const motoristasComPosicao = listaMot.map((motorista, index) => {
     return {
-      ...motorista,      // Copia tudo: id, nome, avatar, pontos, etc.
-      posicao: index + 1 // Cria a nova propriedade baseada no índice
+      ...motorista, // Copia tudo: id, nome, avatar, pontos, etc.
+      posicao: index + 1, // Cria a nova propriedade baseada no índice
     };
   });
 
-  return motoristasComPosicao; // <-- ESTE ERA O BUG: faltava o return
+  return motoristasComPosicao; 
 }
