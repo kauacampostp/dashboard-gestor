@@ -1,4 +1,4 @@
-const BASE_URL = "http://localhost:3001";
+const BASE_URL = "https://dashboard-gestor.onrender.com/";
 
 async function fetchWrapper(endpoint) { // Agrupa a verificação da requisição
   const response = await fetch(`${BASE_URL}${endpoint}`);
